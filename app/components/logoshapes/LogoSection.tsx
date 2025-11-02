@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import circlesAnimation from "@/public/circlesv3.json"; 
+import circlesAnimation from "@/public/lotties/circlesv3.json"; 
 
 export default function ScrollLottieSection() {
   const lottieRef = useRef<LottieRefCurrentProps | null>(null);
