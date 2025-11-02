@@ -26,7 +26,7 @@ export default function Hero() {
     resize();
     window.addEventListener("resize", resize);
 
-    // 🧭 Track Mouse Movement
+
     const handleMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
@@ -43,21 +43,20 @@ export default function Hero() {
         const dy = mouse.current.y - p.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        // 💫 Mouse interaction effect
         if (distance < mouse.current.radius) {
           const forceDirX = dx / distance;
           const forceDirY = dy / distance;
           const maxForce = (mouse.current.radius - distance) / mouse.current.radius;
-          const force = maxForce * 2; // increase to make stronger
+          const force = maxForce * 2;
           p.vx -= forceDirX * force * 0.1;
           p.vy -= forceDirY * force * 0.1;
         }
 
-        // move particle
+
         p.x += p.vx;
         p.y += p.vy;
 
-        // edges bounce
+
         if (p.x <= 0 || p.x >= canvas.width) p.vx *= -1;
         if (p.y <= 0 || p.y >= canvas.height) p.vy *= -1;
 
@@ -65,7 +64,7 @@ export default function Hero() {
         ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
         ctx.fill();
 
-        // connect nearby dots
+
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx2 = p.x - p2.x;
@@ -134,12 +133,12 @@ export default function Hero() {
           Revolutionizing Accounting with Modern Tech & Innovation
         </motion.p>
 
-        <motion.button
+        {/* <motion.button
           whileHover={{ scale: 1.05 }}
           className="bg-indigo-500 hover:bg-indigo-600 px-8 py-3 rounded-full text-white font-semibold shadow-lg shadow-indigo-500/40 transition-all"
         >
           Join Waitlist
-        </motion.button>
+        </motion.button> */}
       </div>
     </section>
   );
