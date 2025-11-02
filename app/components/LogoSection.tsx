@@ -34,7 +34,7 @@ export default function ScrollLottieSection() {
     <section className="relative w-full h-[100vh] bg-black flex flex-col justify-center items-center">
     
 
-      <div className=" top-1/2 -translate-y-1/2">
+      <div className="absolute top-1/2 -translate-y-1/2">
         <Lottie
           lottieRef={lottieRef}
           animationData={circlesAnimation}
